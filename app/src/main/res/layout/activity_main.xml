@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/weatherTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weather Forecast"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:padding="16dp"/>
+
+    <!-- TextView to display current weather details -->
+    <LinearLayout
+        android:id="@+id/llCurrentWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/weatherTextView"
+        android:weightSum="7"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:hint="Today's Date"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/mainTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:hint="main"
+            android:layout_weight="2"/>
+        <ImageView
+            android:id="@+id/weatherImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/ic_launcher_foreground"/>
+    </LinearLayout>
+
+
+    <!-- RecyclerView to display forecast weather -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/forecastRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llCurrentWeather"
+        android:padding="16dp"/>
+
+</RelativeLayout>
+
